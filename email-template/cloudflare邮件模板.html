@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloudflare Admin 系统邮件模板</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f6f6f6;
+        color: #000000;
+        font-family: Inter, Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      img {
+        border: 0;
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: #f38020;
+        text-decoration: none;
+      }
+      .wrapper {
+        width: 100%;
+        background: #f6f6f6;
+        padding: 24px 0;
+      }
+      .container {
+        width: 650px;
+        max-width: 650px;
+        margin: 0 auto;
+        background: #ffffff;
+      }
+      .header {
+        border-top: 10px solid #f38020;
+        padding: 28px 40px 24px;
+      }
+      .content {
+        padding: 0 40px 8px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .title {
+        margin: 0 0 20px;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 700;
+      }
+      .code-box {
+        margin: 24px 0;
+        padding: 18px 24px;
+        background: #fff7f1;
+        border: 1px solid #ffd6b3;
+      }
+      .code-label {
+        font-size: 12px;
+        line-height: 18px;
+        color: #8f8f8f;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .code-value {
+        margin-top: 8px;
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: #111111;
+      }
+      .meta {
+        margin: 0 0 20px;
+        color: #4f4f4f;
+      }
+      .notice {
+        margin: 0 0 24px;
+        padding-left: 16px;
+        border-left: 4px solid #f38020;
+      }
+      .footer {
+        padding: 24px 40px 32px;
+        text-align: center;
+        color: #8f8f8f;
+        font-size: 13px;
+        line-height: 22px;
+        background: #f6f6f6;
+      }
+      @media only screen and (max-width: 650px) {
+        .container {
+          width: 100% !important;
+        }
+        .header,
+        .content,
+        .footer {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .code-value {
+          font-size: 28px !important;
+          line-height: 36px !important;
+          letter-spacing: 0.12em !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: none; max-height: 0; overflow: hidden;">
+      用于 Cloudflare Admin 注册、找回密码等验证码场景的系统邮件模板。
+    </div>
+    <table role="presentation" class="wrapper" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center">
+          <table role="presentation" class="container" width="650" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="header">
+                <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer">
+                  <img
+                    src="https://info.cloudflare.com/rs/713-XSC-918/images/CF_logo_horizontal_blktype_1955x285.png?version=0"
+                    alt="Cloudflare Admin"
+                    width="240"
+                  />
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="content">
+                <p class="title">Cloudflare Admin 注册验证码</p>
+                <p>您好，user@example.com</p>
+                <p>我们收到了一个新的 Cloudflare Admin 账户注册请求，请在注册页面输入以下验证码完成验证。</p>
+                <div class="code-box">
+                  <div class="code-label">Verification Code</div>
+                  <div class="code-value">123456</div>
+                </div>
+                <p class="meta">验证码 10 分钟内有效，请尽快完成操作。</p>
+                <p class="notice">如果这不是您本人发起的操作，请直接忽略本邮件，无需执行任何操作。</p>
+                <p>感谢您使用 Cloudflare Admin。</p>
+                <p>Cloudflare Admin 团队</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="footer">
+                Cloudflare Admin System<br />
+                此邮件由系统自动发送，请勿直接回复。<br />
+                如需帮助，请联系系统管理员。
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

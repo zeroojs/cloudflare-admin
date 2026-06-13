@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cloudflare-admin-worker",
+  "main": "api/index.ts",
+  "compatibility_date": "2026-06-12",
+  "workers_dev": true,
+  "preview_urls": false,
+  // 本地开发可直接使用本地 KV；正式部署前请执行 `wrangler kv namespace create ACCOUNT_STORE`
+  // 并将返回的 id / preview_id 补充到下方配置中。
+  "kv_namespaces": [
+    {
+      "binding": "ACCOUNT_STORE",
+      "id": ""
+    }
+  ],
+  // 邮件发送令牌请通过 `wrangler secret put MAIL_API_TOKEN --config wrangler.worker.jsonc` 注入。
+  // 邮件发送 x-custom-auth 请通过 `wrangler secret put MAIL_API_CUSTOM_AUTH --config wrangler.worker.jsonc` 注入。
+  // 本地开发时请在 `.dev.vars` 中提供以上两个敏感变量，不要写入版本库。
+  "triggers": {
+    "crons": ["0 19 * * *"]
+  },
+  "vars": {
+    "ADMIN_TOKEN": "local-dev-token",
+    "ENCRYPTION_SECRET": "local-dev-encryption-secret",
+    "MAIL_API_URL": "",
+    "MAIL_FROM_NAME": "Cloudflare Admin",
+    "SUPER_ADMIN_EMAIL": "",
+    "MAIL_CODE_EXPIRE_MINUTES": "10",
+    "MAIL_CODE_RESEND_INTERVAL_SECONDS": "60",
+    "ALLOWED_ORIGIN": "*",
+    "RATE_LIMIT_MAX": "120",
+    "RATE_LIMIT_WINDOW_MS": "60000"
+  }
+}
