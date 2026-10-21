@@ -10,7 +10,7 @@
   "kv_namespaces": [
     {
       "binding": "ACCOUNT_STORE",
-      "id": ""
+      "id": "c180d7fdbc00426a80dbaeeb125aa2b8"
     }
   ],
   // 邮件发送令牌请通过 `wrangler secret put MAIL_API_TOKEN --config wrangler.worker.jsonc` 注入。
@@ -22,9 +22,9 @@
   "vars": {
     "ADMIN_TOKEN": "local-dev-token",
     "ENCRYPTION_SECRET": "local-dev-encryption-secret",
-    "MAIL_API_URL": "",
+    "MAIL_API_URL": "https://tmapi.wxin.org/api/send_mail",
     "MAIL_FROM_NAME": "Cloudflare Admin",
-    "SUPER_ADMIN_EMAIL": "",
+    "SUPER_ADMIN_EMAIL": "wlittleyang@163.com",
     "MAIL_CODE_EXPIRE_MINUTES": "10",
     "MAIL_CODE_RESEND_INTERVAL_SECONDS": "60",
     "ALLOWED_ORIGIN": "*",
